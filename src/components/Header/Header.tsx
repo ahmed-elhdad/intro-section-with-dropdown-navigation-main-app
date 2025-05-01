@@ -1,164 +1,159 @@
 "use client";
 
-import React, { MouseEventHandler, useEffect, useState } from 'react'
-import "./Header.css"; 
+import "./Header.css";
 
 // Import assets:
 import logo from "../images/logo.svg";
-import avatar from "../images/image-avatar.png";
-import bar from "../images/icon-menu.svg";
-import shop from "../images/icon-cart.svg";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import deleteIcon from "../images/icon-delete.svg";
+import dropDownIcon from "../images/icon-arrow-down.svg"
+import dropTopIcon from "../images/icon-arrow-up.svg";
+import Buttons from "../Buttons/Button";
+import bar from "..//images/icon-menu.svg";
+import XIcon from "../images/icon-close-menu.svg"
+import listIcon from "../images/icon-todo.svg";
+import calenderIcon from "../images/icon-calendar.svg";
+import remindersIcon from "../images/icon-reminders.svg";
+import planning from "../images/icon-planning.svg";
 const Header = () => {
-    const [realNumber, setRealNumber] = useState(0);
-    let markUp = `
-        <p>your cart is empty.<p/>
-    `;
-    const cart = `
-        <h4 className="font-700">cart</h4>
-        <hr>
-        <div className="content">
-            ${markUp}
-        </div>
-        `;
-        let tru = `
-        <img src={prudactImg.src} alt=""/>
-        <p className="font-400">fall limited edition sneakers</p>
-        <span className="price font-400"></span>
-        <span className="order-number font-400"><span/>
-        <span className="total"></span>
-        <img src = ${deleteIcon.src} />
-        <button>check out</button>
-        `;
-    const addToCartFunc = () => { 
-        let num = document.querySelector(".count span");
-        setRealNumber(Number(num?.textContent) || 0);
-        const spanElement = document.querySelector("img+span");
-        if (spanElement) {
-            spanElement.textContent = realNumber.toString();
+    let barIco = dropDownIcon;
+    const showBar = () => {
+        const bar = document.querySelector("ul li ul.bar");
+        const toggle = document.querySelector("ul li.bar");
+        if (toggle.id == "false") {
+            toggle.id = "true";
+        }else{
+            toggle.id = "false";
         }
-        console.log(document.querySelector("img+span"));
-        console.log(realNumber);
-        
+        if (toggle.id == "false") {
+            bar?.classList.add("hidden");
+        }else{
+            bar?.classList.remove("hidden");
+        }
     }
-    useEffect(() => {
-        let btnAdd = document.querySelector(".add-to-cart") as HTMLButtonElement | null;
-        if (btnAdd) {
-            btnAdd.onclick = addToCartFunc;
-        }
+    
 
-    })
-    const cartFunc = () => {
-        let num = document.querySelector(".count span");
-        let cartDiv = document.createElement("div");
-        cartDiv.classList.add("cart");
-        cartDiv.classList.add("font-700");
-        document.body.appendChild(cartDiv);
-        cartDiv.innerHTML = cart;
-        if (realNumber > 0) {
-            markUp =  `
-            <img src={prudactImg.src} alt=""/>
-            <p className="font-400">fall limited edition sneakers</p>
-            <span className="price font-400"></span>
-            <span className="order-number font-400"><span/>
-            <span className="total"></span>
-            <img src = ${deleteIcon.src} />
-            <button>check out</button>
-            `;;
-            console.log(markUp);
-        }
-    } 
-    useEffect(() => {
-    }
-    , []);
-    const showMenuBar = () => {
-        let navBar = document.querySelector("nav.responsive");
-        let toggle = document.querySelector(".toggle") ;
-        if (toggle?.hasAttribute("id")) {
-            if (toggle.id === "false") {
-                toggle.id = "true";
-            } else {
-                toggle.id = "false";
-            }   
-            if (toggle.id === "true") {
-                navBar?.classList.remove("d-none");
-                document.querySelector(".will-cover")?.classList.add("cover");
-                navBar?.classList.add("flex");
-                console.log("true");
-            }else{
-                navBar?.classList.add("d-none");
-                document.querySelector(".will-cover")?.classList.remove("cover");
-                console.log("false");
-            }
-        }
-    }
 
-    const close = () => {
-        document.querySelector("nav.responsive")?.classList.add("d-none");
-        document.querySelector(".will-cover")?.classList.remove("cover");
-    };
+        const showBar1 = () => {
+          const bar1 = document.querySelector("ul li ul.bar1");
+          const toggle1 = document.querySelector("ul li.bar1");
+          const bar = document.querySelector("ul li ul.bar");
+          const toggle = document.querySelector("ul li.bar");
+          
+          if (toggle1.id == "false") {
+            toggle1.id = "true";
+          } else {
+            toggle1.id = "false";
+          }
+          if (toggle1.id == "false") {
+            bar?.classList.add("hidden");
+            barIco = dropDownIcon;
+            bar1?.classList.add("hidden");
+          } else {
+            bar?.classList.add("hidden");
+            barIco = dropTopIcon;
+            bar1?.classList.remove("hidden");
+          }
+        bar?.classList.add("hidden");
+        };
     return (
-        <>
-            <header  className='flex justify-between align-center font-400'>
-                <div className="logo flex justify-between align-center">
-                    <button className='toggle' onClick={showMenuBar} id = {"false"}>
-                        <img src={bar.src} alt="" />
-                    </button>
-                    <img src={logo.src} className='logo' alt="" />
-                </div>
-                <nav className=''>
-                    <ul className='flex justify-between'>
-                        <li>
-                            <a href="">Collections </a>
-                        </li>
-                        <li>
-                            <a href="">men</a>
-                        </li>
-                        <li>
-                            <a href="">woman</a>
-                        </li>
-                        <li>
-                            <a href="">about</a>
-                        </li>
-                        <li>
-                            <a href="">contact</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div className="flex align-center font-400" >
-                    <button type='button' onClick={cartFunc} id='shop'>
-                        <img src={shop.src} alt="" />
-                        <span className='number flex justify-center items-center'>0</span>
-                    </button>
-                    <img src={avatar.src} alt="" />
-                </div>
-            </header>
-            <hr />
-            <nav className='responsive d-none flex flex-col'>
-                <button onClick={close} type="button">
-                    <FontAwesomeIcon className='Xmark' icon={faXmark}/>
-                </button>
-                <ul className='flex   justify-between flex-col font-700'>
-                    <li>
-                        <a href="">Collections </a>
-                    </li>
-                    <li>
-                        <a href="">men</a>
-                    </li>
-                    <li>
-                        <a href="">woman</a>
-                    </li>
-                    <li>
-                        <a href="">about</a>
-                    </li>
-                    <li>
-                        <a href="">contact</a>
-                    </li>
+      <>
+        <header className="flex justify-between align-center">
+          <img src={logo.src} alt="" />
+          <nav>
+            <ul className="main flex justify-between align-center">
+              <li className="bar" onClick={showBar}>
+                features <img src={barIco.src} />
+                <ul className="bar hidden">
+                  <li>
+                    <img src={listIcon.src} alt="" /> todo list
+                  </li>
+                  <li>
+                    <img src={calenderIcon.src} alt="" /> calendar
+                  </li>
+                  <li>
+                    <img src={remindersIcon.src} alt="" /> reminders
+                  </li>
+                  <li>
+                    <img src={planning.src} alt="" /> planning
+                  </li>
                 </ul>
-            </nav>
-        </>
-    )
-}
+              </li>
+              <li className="bar1" onClick={showBar1}>
+                company <img src={barIco.src} />
+                <ul className="bar1 hidden">
+                  <li>history</li>
+                  <li>our team</li>
+                  <li>blog</li>
+                </ul>
+              </li>
+              <li>
+                <a href="">careers</a>
+              </li>
+              <li>
+                <a href="">about</a>
+              </li>
+            </ul>
+          </nav>
+          <div className="flex justify-between align-center">
+            <Buttons />
+          </div>
+          <button
+            className="bar toggle"
+            id="false"
+            onClick={() => {
+              const nav = document.querySelector("div.right-nav");
+              const rightNav = `
+              <img src=${XIcon.src} alt="" />
+              <ul className="main flex justify-between align-center">
+                <li>
+                        <a href="">
+                        features <img src=${barIco.src} />
+                        </a>
+                        <ul>
+                            <li><img src=${listIcon.src} alt="" /></li>
+                            <li><img src=${calenderIcon.src} alt="" /></li>
+                            <li><img src=${remindersIcon.src} alt="" /></li>
+                            <li><img src=${planning.src} alt="" /></li>
+                        </ul>
+                    </li>
+                    <li>
+                                    <a href="">
+                                        company <img src=${barIco.src} />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">careers</a>
+                                </li>
+                                <li>
+                                    <a href="">about</a>
+                                </li>
+                            </ul>
+              `;
+              const toggle = document.querySelector(".toggle");
+              if (toggle.id == "false") {
+                toggle.id = "true";
+              } else {
+                toggle.id = "false";
+                console.log(toggle.id);
+              }
+              if (toggle.id == "false") {
+                if (nav) {
+                  nav.remove();
+                }
+              } else {
+                const div = document.createElement("div");
+                if (document.body.lastChild.className == "right-nav") {
+                  return;
+                } else {
+                  div.innerHTML = rightNav;
+                  document.body.appendChild(div);
+                }
+              }
+            }}
+          >
+            <img src={bar.src} alt="" />
+          </button>
+        </header>
+      </>
+    );
+};
 export default Header;
