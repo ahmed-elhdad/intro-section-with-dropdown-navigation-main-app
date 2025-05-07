@@ -17,6 +17,8 @@
 
 header ul {
   list-style: none;
+  gap: 10px;
+  text-transform: capitalize;
 }
 header ul .bar::-moz-selection {
   display: none;
@@ -31,6 +33,23 @@ header ul li a {
   text-decoration: none;
   color: var(--Almost-Black);
 }
+header .buttons {
+  gap: 10px;
+}
+header .buttons button.log-in,
+header .buttons button.sign-in {
+  width: 80px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
+}
+header .buttons button.log-in {
+  border: none;
+  text-transform: capitalize;
+}
+header .toggle {
+  display: none;
+}
 header ul.bar,
 header ul.bar1 {
   background-color: var(--Almost-White);
@@ -40,9 +59,34 @@ header ul.bar1 {
   justify-content: center;
   padding: 10px;
   position: absolute;
-  top: 60px;
-  left: 22%;
   flex-direction: column;
   gap: 10px;
   border-radius: 10px;
+}
+header ul.bar1 {
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  header .buttons {
+    display: none;
+  }
+  header nav {
+    display: none;
+  }
+  .toggle {
+    display: block !important;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background-color: transparent;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+    z-index: 10;
+  }
 }/*# sourceMappingURL=Header.css.map */

@@ -1,0 +1,115 @@
+@import "../helpers/variables";
+.hero {
+  width: 100%;
+  @media (max-width: 1000px) {
+    gap: 100px;
+  }
+  @media (min-width: 1000px) {
+    gap: 200px;
+  }
+  div.img {
+    @media (max-width: 1000px) {
+      width: 50%;
+      img {
+        width: 435px;
+      }
+    }
+    // Responsive for big display
+    @media (min-width: 1000px) {
+      width: 70%;
+      img {
+        width: 500px;
+      }
+    }
+  }
+  .left {
+    position: relative;
+    top: 50px;
+    gap: 110px;
+    line-height: 30px;
+    width: 50%;
+    height: max-content;
+    .content {
+      gap: 50px;
+      h1 {
+        line-height: 80px;
+        font-size: 5rem;
+      }
+      p {
+        color: var(--Medium-Gray);
+        font-size: 1.3rem;
+        font-weight: 500;
+        width: 400px;
+        &:first-letter {
+          text-transform: uppercase;
+        }
+      }
+      button.learn-more {
+        width: 110px;
+        height: 40px;
+        text-align: center;
+        background-color: var(--Almost-Black);
+        color: var(--Almost-White);
+        border: 1px solid var(--Almost-Black);
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        letter-spacing: 0.3px;
+        &::first-letter {
+          text-transform: capitalize;
+        }
+        &:hover {
+          background-color: white;
+          color: var(--Almost-Black);
+        }
+      }
+    }
+    .companies {
+      position: relative;
+      left: -30px;
+      img {
+        width: 15%;
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .hero {
+    flex-direction: column-reverse;
+    gap: 30px !important;
+    .img {
+      width: 100%;
+      img {
+        position: relative;
+        padding-left: 0;
+        margin-left: 0;
+        left: -30px;
+        width: 192% !important;
+      }
+    }
+    .left {
+      position: relative;
+      top: -30px;
+      .content {
+        .instead {
+          h1 {
+            width: 260px;
+            text-align: center;
+            word-break: keep-all;
+            font-size: 1.8rem;
+            line-height: normal;
+          }
+          br {
+            display: none;
+          }
+          p {
+            width: 390px !important;
+            font-size: 1rem;
+            text-wrap: wrap;
+            word-wrap: break-word;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,124 @@
-/*# sourceMappingURL=Hero.css.map */
+:root {
+  --Almost-White: #fafafa;
+  --Medium-Gray: #696969;
+  --Almost-Black: #141414;
+  --Font-size-paragraph: 18px;
+}
+
+.hero {
+  width: 100%;
+}
+@media (max-width: 1000px) {
+  .hero {
+    gap: 100px;
+  }
+}
+@media (min-width: 1000px) {
+  .hero {
+    gap: 200px;
+  }
+}
+@media (max-width: 1000px) {
+  .hero div.img {
+    width: 50%;
+  }
+  .hero div.img img {
+    width: 435px;
+  }
+}
+@media (min-width: 1000px) {
+  .hero div.img {
+    width: 70%;
+  }
+  .hero div.img img {
+    width: 500px;
+  }
+}
+.hero .left {
+  position: relative;
+  top: 50px;
+  gap: 110px;
+  line-height: 30px;
+  width: 50%;
+  height: -moz-max-content;
+  height: max-content;
+}
+.hero .left .content {
+  gap: 50px;
+}
+.hero .left .content h1 {
+  line-height: 80px;
+  font-size: 5rem;
+}
+.hero .left .content p {
+  color: var(--Medium-Gray);
+  font-size: 1.3rem;
+  font-weight: 500;
+  width: 400px;
+}
+.hero .left .content p:first-letter {
+  text-transform: uppercase;
+}
+.hero .left .content button.learn-more {
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  background-color: var(--Almost-Black);
+  color: var(--Almost-White);
+  border: 1px solid var(--Almost-Black);
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+.hero .left .content button.learn-more::first-letter {
+  text-transform: capitalize;
+}
+.hero .left .content button.learn-more:hover {
+  background-color: white;
+  color: var(--Almost-Black);
+}
+.hero .left .companies {
+  position: relative;
+  left: -30px;
+}
+.hero .left .companies img {
+  width: 15%;
+}
+
+@media (max-width: 400px) {
+  .hero {
+    flex-direction: column-reverse;
+    gap: 30px !important;
+  }
+  .hero .img {
+    width: 100%;
+  }
+  .hero .img img {
+    position: relative;
+    padding-left: 0;
+    margin-left: 0;
+    left: -30px;
+    width: 192% !important;
+  }
+  .hero .left {
+    position: relative;
+    top: -30px;
+  }
+  .hero .left .content .instead h1 {
+    width: 260px;
+    text-align: center;
+    word-break: keep-all;
+    font-size: 1.8rem;
+    line-height: normal;
+  }
+  .hero .left .content .instead br {
+    display: none;
+  }
+  .hero .left .content .instead p {
+    width: 390px !important;
+    font-size: 1rem;
+    text-wrap: wrap;
+    word-wrap: break-word;
+  }
+}/*# sourceMappingURL=Hero.css.map */

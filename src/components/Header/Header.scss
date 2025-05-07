@@ -10,6 +10,8 @@
 header{
     ul{
         list-style: none;
+        gap: 10px;
+        text-transform: capitalize;
         .bar::selection{
             display: none;
         }
@@ -21,6 +23,23 @@ header{
             }
         }
     }
+    .buttons{
+        gap: 10px;
+        button.log-in,
+        button.sign-in{
+            width: 80px;
+            height: 30px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        button.log-in{
+            border: none;
+            text-transform: capitalize;
+        }
+    }
+    .toggle{
+        display: none;
+    }
     ul.bar,
     ul.bar1{
         background-color: var(--Almost-White);
@@ -30,10 +49,35 @@ header{
         justify-content: center;
         padding: 10px;
         position: absolute;
-        top: 60px;
-        left: 22%;
         flex-direction: column;
         gap: 10px;
         border-radius: 10px;
+    }
+    ul.bar1{
+        top: 50px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+@media (max-width: 768px){
+    header{
+        .buttons{
+            display: none;
+        }
+        nav{
+            display: none;
+        }
+    }
+    .toggle{
+        display: block !important;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        background-color: transparent;
+        width: fit-content;
+        border: none;
+        z-index: 10;
     }
 }

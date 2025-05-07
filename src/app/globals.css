@@ -1,4 +1,25 @@
-
+@import "../components/helpers/_variables.scss";
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header,
+.hero{
+    position: absolute;
+}
+.hero{
+    top: 10%;
+    left: 10%;
+}
+header{
+    top: 0;
+    width: 99%;
+}
+*{
+    box-sizing: border-box;   
+}
 .flex{
     display: flex;
 }
@@ -14,7 +35,7 @@
 .flex-nowrap{
     flex-wrap: nowrap;
 }
-.flex-row-reverse{
+.flex-row-reverse{  
     flex-direction: row-reverse;
 }
 .flex-col-reverse{
@@ -49,4 +70,38 @@
 }
 .justify-evenly{
     justify-content: space-evenly;
+}
+.rad{
+    border-radius: 10px;
+    border: 2px solid var(--Almost-Black);
+}
+.rad::first-letter{
+    text-transform: uppercase;
+}
+
+.kumbh-sans-400 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "YOPQ" 300;
+}
+
+.kumbh-sans-500 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "YOPQ" 300;
+}
+
+.kumbh-sans-700 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "YOPQ" 300;
 }
