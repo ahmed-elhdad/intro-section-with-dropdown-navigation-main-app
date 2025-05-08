@@ -8,32 +8,6 @@
 .hero {
   width: 100%;
 }
-@media (max-width: 1000px) {
-  .hero {
-    gap: 100px;
-  }
-}
-@media (min-width: 1000px) {
-  .hero {
-    gap: 200px;
-  }
-}
-@media (max-width: 1000px) {
-  .hero div.img {
-    width: 50%;
-  }
-  .hero div.img img {
-    width: 435px;
-  }
-}
-@media (min-width: 1000px) {
-  .hero div.img {
-    width: 70%;
-  }
-  .hero div.img img {
-    width: 500px;
-  }
-}
 .hero .left {
   position: relative;
   top: 50px;
@@ -84,41 +58,4 @@
 }
 .hero .left .companies img {
   width: 15%;
-}
-
-@media (max-width: 400px) {
-  .hero {
-    flex-direction: column-reverse;
-    gap: 30px !important;
-  }
-  .hero .img {
-    width: 100%;
-  }
-  .hero .img img {
-    position: relative;
-    padding-left: 0;
-    margin-left: 0;
-    left: -30px;
-    width: 192% !important;
-  }
-  .hero .left {
-    position: relative;
-    top: -30px;
-  }
-  .hero .left .content .instead h1 {
-    width: 260px;
-    text-align: center;
-    word-break: keep-all;
-    font-size: 1.8rem;
-    line-height: normal;
-  }
-  .hero .left .content .instead br {
-    display: none;
-  }
-  .hero .left .content .instead p {
-    width: 390px !important;
-    font-size: 1rem;
-    text-wrap: wrap;
-    word-wrap: break-word;
-  }
 }/*# sourceMappingURL=Hero.css.map */

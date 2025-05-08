@@ -1,0 +1,20 @@
+@media (max-width: 768px) {
+  header .buttons {
+    display: none;
+  }
+  header nav {
+    display: none;
+  }
+  .toggle {
+    display: block !important;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background-color: transparent;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+    z-index: 10;
+  }
+}/*# sourceMappingURL=HeaderMob.css.map */

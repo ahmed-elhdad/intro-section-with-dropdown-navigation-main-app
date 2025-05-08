@@ -1,4 +1,4 @@
-@use "../helpers/variables" as *;
+@use "../../helper/variables" as *;
 .main{
     display: flex;
     justify-content: space-between;
@@ -58,26 +58,5 @@ header{
         left: 0;
         right: 0;
         margin: auto;
-    }
-}
-@media (max-width: 768px){
-    header{
-        .buttons{
-            display: none;
-        }
-        nav{
-            display: none;
-        }
-    }
-    .toggle{
-        display: block !important;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        position: relative;
-        background-color: transparent;
-        width: fit-content;
-        border: none;
-        z-index: 10;
     }
 }

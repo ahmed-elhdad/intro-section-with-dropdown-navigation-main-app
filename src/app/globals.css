@@ -1,4 +1,3 @@
-@import "../components/helpers/_variables.scss";
 body{
     display: flex;
     flex-direction: column;

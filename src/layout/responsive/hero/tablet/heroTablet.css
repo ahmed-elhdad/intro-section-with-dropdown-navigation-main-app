@@ -1,0 +1,11 @@
+@media (max-width: 1000px) {
+  .hero {
+    gap: 100px;
+  }
+  .hero div.img {
+    width: 50%;
+  }
+  .hero div.img img {
+    width: 435px;
+  }
+}/*# sourceMappingURL=heroTablet.css.map */

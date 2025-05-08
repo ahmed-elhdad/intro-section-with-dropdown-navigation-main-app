@@ -1,11 +1,14 @@
 // import assets:
-import dataBiz from "../images/client-databiz.svg";
-import audiophile from "../images/client-audiophile.svg";
-import meet from "../images/client-meet.svg";
-import maker from "../images/client-maker.svg";
-import imgHero from "../images/image-hero-desktop.png";
-import "./Hero.css";
-import "./mediaM1000.css";
+import dataBiz from "../../images/client-databiz.svg";
+import audiophile from "../../images/client-audiophile.svg";
+import meet from "../../images/client-meet.svg";
+import maker from "../../images/client-maker.svg";
+import imgHero from "../../images/image-hero-desktop.png";
+// Add the style:
+import "../../layout/scss/Hero/Hero.css";
+import "../../layout/responsive/hero/display/HeroM1000.css";
+import "../../layout/responsive/hero/mobile/heroMobile.css";
+import "../../layout/responsive/hero/tablet/heroTablet.css";
 const Hero = () => {
   return (
     <>
@@ -13,17 +16,17 @@ const Hero = () => {
         <div className="left flex flex-col justify-stretch items-end">
           <div className="content flex flex-col justify-center items-start">
             <div className="instead">
-                <h1>
+              <h1>
                 Make <br />
                 remote work
-                </h1>
-                <p>
+              </h1>
+              <p>
                 Get your team in sync, no matter your location. Streamline
                 processes, create team rituals, and watch productivity soar.{" "}
-                </p>
+              </p>
             </div>
             <div className="btn">
-                <button className="learn-more">learn more</button>
+              <button className="learn-more">learn more</button>
             </div>
           </div>
           <div className="companies flex justify-around items-center">

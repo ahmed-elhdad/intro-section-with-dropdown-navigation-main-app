@@ -1,0 +1,11 @@
+@media (min-width: 1000px) {
+  .hero {
+    gap: 200px;
+  }
+  .hero div.img {
+    width: 70%;
+  }
+  .hero div.img img {
+    width: 500px;
+  }
+}/*# sourceMappingURL=HeroM1000.css.map */

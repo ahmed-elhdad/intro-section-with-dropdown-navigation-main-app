@@ -1,0 +1,40 @@
+@media (max-width: 400px) {
+  .hero {
+    flex-direction: column-reverse;
+    gap: 30px !important;
+    .img {
+      width: 100%;
+      img {
+        position: relative;
+        padding-left: 0;
+        margin-left: 0;
+        left: -30px;
+        width: 192% !important;
+      }
+    }
+    .left {
+      position: relative;
+      top: -30px;
+      .content {
+        .instead {
+          h1 {
+            width: 260px;
+            text-align: center;
+            word-break: keep-all;
+            font-size: 1.8rem;
+            line-height: normal;
+          }
+          br {
+            display: none;
+          }
+          p {
+            width: 390px !important;
+            font-size: 1rem;
+            text-wrap: wrap;
+            word-wrap: break-word;
+          }
+        }
+      }
+    }
+  }
+}

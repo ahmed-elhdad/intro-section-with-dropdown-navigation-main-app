@@ -1,0 +1,12 @@
+// Responsive for big displays
+@media (min-width: 1000px) {
+  .hero {
+    gap: 200px;
+    div.img {
+      width: 70%;
+      img {
+        width: 500px;
+      }
+    }
+  }
+}
